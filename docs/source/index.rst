@@ -12,7 +12,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-.. automodule:: vlcli
+.. automodule:: vl
 
 Indices and tables
 ==================

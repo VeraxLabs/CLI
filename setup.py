@@ -1,5 +1,5 @@
-from setuptools import setup
-import vlcli
+from setuptools import setup, find_packages
+import vl
 
 config = {
     'name': 'vlcli',
@@ -8,10 +8,13 @@ config = {
     'author': 'Prashant Singhal',
     'url': 'http://www.veraxlabs.com',
     'author_email': 'psl@veraxlabs.com',
-    'version': vlcli.__version__,
-    'install_requires': [],
-    'packages': ['vlcli'],
-    'scripts': ['bin/vl'],
+    'version': vl.__version__,
+    'install_requires': ['click'],
+    'packages': find_packages(),
+    'entry_points': '''
+        [console_scripts]
+        vl=vl.cli:run
+    ''',
     'keywords': 'cloud devops sysadmin administration setup monitoring security',
     'license': 'Apache License 2.0',
     'classifiers': (
