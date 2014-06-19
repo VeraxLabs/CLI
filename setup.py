@@ -13,7 +13,7 @@ config = {
     'packages': find_packages(),
     'entry_points': '''
         [console_scripts]
-        vl=vl.cli:run
+        vl=vl.cli.main:run
     ''',
     'keywords': 'cloud devops sysadmin administration setup monitoring security',
     'license': 'Apache License 2.0',
