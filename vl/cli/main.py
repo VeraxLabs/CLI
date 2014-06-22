@@ -7,6 +7,7 @@ import logging
 import vl
 from logging.config import dictConfig
 from vl.config.logging import get_config
+from user import user
 
 
 def setup_logging(ctx, param, value):
@@ -30,3 +31,6 @@ def run():
     """
     logger = logging.getLogger(__name__)
     logger.debug('Processing command line...')
+
+
+run.add_command(user)
