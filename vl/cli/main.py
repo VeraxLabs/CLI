@@ -8,6 +8,7 @@ import vl
 from logging.config import dictConfig
 from vl.config.logging import get_config
 from user import user
+from cloud_provider import cloud_provider
 
 
 def setup_logging(ctx, param, value):
@@ -34,3 +35,4 @@ def run():
 
 
 run.add_command(user)
+run.add_command(cloud_provider)
