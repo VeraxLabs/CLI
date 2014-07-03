@@ -4,4 +4,4 @@ It parses the command line arguments, calls the appropriate REST API's
 and prints the output.
 """
 
-__version__ = '0.1dev4'
+__version__ = '0.1dev5'
