@@ -6,7 +6,7 @@ from vl.cli.cloud_account import add, list_cloud_accounts, update, delete
 
 @httpretty.activate
 def test_cloud_account_add():
-    output = {'user': 'psl@veraxlabs.com', 'name': 'aws1', 'cloud-provider': 'aws',
+    output = {'user': 'psl@veraxlabs.com', 'name': 'aws1', 'cloud_provider': 'aws',
               'api_key': '12345', 'api_secret': '98765'}
     httpretty.register_uri(httpretty.POST, 'http://api.veraxlabs.com/cloud-accounts',
                            body=json.dumps(output), content_type='application/json')
@@ -19,7 +19,7 @@ def test_cloud_account_add():
 @httpretty.activate
 def test_cloud_account_list_one():
     name = 'aws1'
-    output = {'user': 'psl@veraxlabs.com', 'name': '%s' % name, 'cloud-provider': 'aws',
+    output = {'user': 'psl@veraxlabs.com', 'name': '%s' % name, 'cloud_provider': 'aws',
               'api_key': '12345', 'api_secret': '98765'}
     httpretty.register_uri(httpretty.GET, 'http://api.veraxlabs.com/cloud-accounts/%s' % name,
                            body=json.dumps(output), content_type='application/json')
@@ -31,7 +31,7 @@ def test_cloud_account_list_one():
 
 @httpretty.activate
 def test_cloud_account_list_all():
-    output = [{'user': 'psl@veraxlabs.com', 'name': 'aws1', 'cloud-provider': 'aws',
+    output = [{'user': 'psl@veraxlabs.com', 'name': 'aws1', 'cloud_provider': 'aws',
                'api_key': '12345', 'api_secret': '98765'}]
     httpretty.register_uri(httpretty.GET, 'http://api.veraxlabs.com/cloud-accounts',
                            body=json.dumps(output), content_type='application/json')
@@ -44,7 +44,7 @@ def test_cloud_account_list_all():
 @httpretty.activate
 def test_cloud_account_update():
     name = 'aws1'
-    output = {'user': 'psl@veraxlabs.com', 'name': 'aws2', 'cloud-provider': 'aws',
+    output = {'user': 'psl@veraxlabs.com', 'name': 'aws2', 'cloud_provider': 'aws',
               'api_key': '98765', 'api_secret': 'qwerty'}
     httpretty.register_uri(httpretty.PATCH, 'http://api.veraxlabs.com/cloud-accounts/%s' % name,
                            body=json.dumps(output), content_type='application/json')

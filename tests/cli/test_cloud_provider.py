@@ -7,7 +7,7 @@ from vl.cli.cloud_provider import list_cloud_providers
 @httpretty.activate
 def test_cloud_provider_list_one():
     name = 'aws'
-    output = {'name': '%s' % name, 'defaults': {'region': 'us-east-1', 'instance-type': 't1.micro'}}
+    output = {'name': '%s' % name, 'defaults': {'region': 'us-east-1', 'instance_type': 't1.micro'}}
     httpretty.register_uri(httpretty.GET, 'http://api.veraxlabs.com/cloud-providers/%s' % name,
                            body=json.dumps(output), content_type='application/json')
     runner = CliRunner()
@@ -18,7 +18,7 @@ def test_cloud_provider_list_one():
 
 @httpretty.activate
 def test_cloud_provider_list_all():
-    output = [{'name': 'aws', 'defaults': {'region': 'us-east-1', 'instance-type': 't1.micro'}}]
+    output = [{'name': 'aws', 'defaults': {'region': 'us-east-1', 'instance_type': 't1.micro'}}]
     httpretty.register_uri(httpretty.GET, 'http://api.veraxlabs.com/cloud-providers',
                            body=json.dumps(output), content_type='application/json')
     runner = CliRunner()

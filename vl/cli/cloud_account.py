@@ -4,7 +4,7 @@ import logging
 from vl.commands import cloud_account as cmd_cloud_account
 
 
-@click.group()
+@click.group('cloud-account')
 def cloud_account():
     """
     Cloud account commands
@@ -14,7 +14,7 @@ def cloud_account():
 
 
 @cloud_account.command()
-@click.option('-c', '--cloud-provider', 'cloud_provider', prompt=True, help='cloud provider')
+@click.option('-c', '--cloud-provider', 'cloud_provider', prompt=True, help='cloud provider name')
 @click.option('-n', '--name', prompt=True, help='cloud account name')
 @click.option('-k', '--api-key', 'api_key', prompt=True, hide_input=True, help='api key')
 @click.option('-s', '--api-secret', 'api_secret', prompt=True, hide_input=True, help='api secret')
